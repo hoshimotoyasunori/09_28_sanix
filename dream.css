@@ -1,0 +1,108 @@
+body{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: column;
+    padding: 0%;
+    margin: 0%;
+    background-color: black;
+}
+header{
+    display: flex;
+    justify-content: space-around;
+    /* align-items: center; */
+    /* flex-direction: column; */
+    width: 90vw;
+    height: 40vh;
+    /* overflow: scroll; */
+    background-color: white;
+}
+.output{
+    /* display: flex;
+    justify-content: space-around; */
+    /* align-items: center; */
+    /* flex-direction: column; */
+    width: 50%;
+    height: 40vh;
+    overflow: scroll;
+    background-color: white;
+}
+.link{
+    width: 50%;
+    border: solid 1px;
+}
+main{
+    width: 90vw;
+    background-color: black;
+}
+.top{
+    background-color: black;
+    color: white;
+}
+.box{
+    width: 90vw;
+    height: 60vh;
+    display: flex;
+    justify-content: space-around;
+    align-items: stretch;
+    /* flex-direction: column; */
+}
+img{
+    width: 10vw;
+    height: 10vw;
+}
+.FR{
+    width: calc(100vw/8);
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: column;    
+}
+.SR{
+    width: calc(100vw/8);
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: column;
+}
+.BR{
+    width: calc(100vw/8);
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: column;
+}
+.SH{
+    width: calc(100vw/8);
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: column;
+}
+.SO{
+    width: calc(100vw/8);
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: column;
+}
+.TB{width: calc(100vw/8);
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: column;
+}
+
+.FB{
+    width: calc(100vw/8);
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: column;
+}
+.hako{
+    width: calc(100vw/8);
+    height:calc(100vw/8);
+    border: solid 1px;
+    background-color: white;
+}
