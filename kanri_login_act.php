@@ -15,7 +15,7 @@ $password = $_POST['password'];
 // exit();
 
 
-$sql = 'SELECT * FROM add_account
+$sql = 'SELECT * FROM kanri_table
     WHERE username=:username
     AND mail=:mail
     AND password=:password
@@ -26,9 +26,9 @@ $stmt = $pdo->prepare($sql);
 $stmt->bindValue(':username', $username, PDO::PARAM_STR);
 $stmt->bindValue(':mail', $mail, PDO::PARAM_STR);
 $stmt->bindValue(':password', $password, PDO::PARAM_STR);
-$status = $stmt->execute();
 // var_dump($_POST);
 // exit();
+$status = $stmt->execute();
 
 
 
@@ -45,7 +45,7 @@ if ($status == false) {
     $val = $stmt->fetch(PDO::FETCH_ASSOC);
     if (!$val) {   // 該当データがないときはログインページへのリンクを表示
         echo "<p>ログイン情報に誤りがあります.</p>";
-        echo '<a href="login.php">login</a>';
+        echo '<a href="kanri_login.php">login</a>';
         echo '<a href="index.php">top</a>';
         exit();
     } else {
@@ -53,7 +53,7 @@ if ($status == false) {
         $_SESSION["session_id"] = session_id();
         $_SESSION["is_admin"] = $val["is_admin"];
         $_SESSION["username"] = $val["username"];
-        header("Location:dream.php"); // 一覧ページへ移動 
+        header("Location:input.php"); // 一覧ページへ移動 
         exit();
     }
 }

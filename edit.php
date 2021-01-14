@@ -12,7 +12,7 @@ check_session_id();
 $pdo = connect_to_db();
 
 // データ取得SQL作成
-$sql = 'SELECT * FROM rugby_table WHERE id=:id';
+$sql = 'SELECT * FROM sanix_member WHERE id=:id';
 
 // SQL準備&実行
 $stmt = $pdo->prepare($sql);
@@ -56,44 +56,18 @@ if ($status == false) {
         <fieldset>
             <legend>（編集画面）</legend>
             <a href="read.php">一覧画面</a>
+
             <div>
-                team: <select name="team">
-                    <option value="宗像サニックスブルース">宗像サニックスブルース </option>
-                    <option value="コベルコスティーラーズ">コベルコスティーラーズ</option>
-                    <option value="トヨタベルブリッツ">トヨタベルブリッツ</option>
-                    <option value="パナソニックワイルドナイツ">パナソニックワイルドナイツ</option>
-                    <option value="サントリーサンゴリアス">サントリーサンゴリアス</option>
-                    <option value="クボタスピアーズ">クボタスピアーズ</option>
-                    <option value="ヤマハジュビロ磐田">ヤマハジュビロ磐田</option>
-                    <option value="NECグリーンロケッツ">NECグリーンロケッツ</option>
-                    <option value="東芝ブレイブルーパス">東芝ブレイブルーパス</option>
-                    <option value="RICHOブラックラムズ">RICHOブラックラムズ</option>
-                    <option value="n-NTTコミュニケーションズ">NTTコミュニケーションズ</option>
-                    <option value="三菱重工ダイナボアーズ">三菱重工ダイナボアーズ</option>
-                    <option value="ホンダヒート">ホンダヒート</option>
-                    <option value="日野レッドドルフィンズ">日野レッドドルフィンズ</option>
-                    <option value="ドコモレッドスパークす">ドコモレッドスパークす</option>
-                    <option value="キャノンイーグルス">キャノンイーグルス</option>
-                </select>
-                <!-- <input type="text" name="team" value="<?= $record["team"] ?>"> -->
+                <?= $record["name"] ?>
             </div>
             <div>
-                name: <input type="text" name="name" value="<?= $record["name"] ?>">
+                <input type="text" name="main_position" value="<?= $record["main_position"] ?>">
             </div>
             <div>
-                tall: <input type="text" name="tall" value="<?= $record["tall"] ?>">
+                <input type="text" name="sub_position" value="<?= $record["sub_position"] ?>">
             </div>
             <div>
-                weight: <input type="text" name="weight" value="<?= $record["weight"] ?>">
-            </div>
-            <div>
-                born: <input type="date" name="born" value="<?= $record["born"] ?>">
-            </div>
-            <div>
-                comefrom: <input type="text" name="comefrom" value="<?= $record["comefrom"] ?>">
-            </div>
-            <div>
-                image: <input type="url" name="image" value="<?= $record["image"] ?>">
+                <input type="url" name="image" value="<?= $record["image"] ?>">
             </div>
             <div>
                 <button>更新</button>

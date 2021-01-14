@@ -1,9 +1,12 @@
 <?php
+
+
+
 // var_dump($_POST);
 // exit();
 session_start();
 include("functions.php");
-check_session_id();
+// check_session_id();
 // DB接続
 $pdo = connect_to_db();
 // var_dump($_POST);
@@ -30,8 +33,7 @@ if ($status == false) {
     // <tr><td>deadline</td><td>todo</td><tr>の形になるようにforeachで順番に$outputへデータを追加
     // `.=`は後ろに文字列を追加する，の意味
     foreach ($result as $record) {
-        // $output .= "<td>{$record["team"]}</td>";
-        $output .= "<div>{$record["name"]}<br>NO.{$record["main_position"]}NO.{$record["sub_position"]}<br><a href='edit.php?id={$record["id"]}'>編集</a><br><a href='delete.php?id={$record["id"]}'>消去</a></div><div><button><img src=\"" . $record['image'] . "\"></button></div>";
+        $output .= "<td><button><img src=\"" . $record['image'] . "\"></button></td>";
     }
     // $valueの参照を解除する．解除しないと，再度foreachした場合に最初からループしない
     // 今回は以降foreachしないので影響なし
@@ -51,23 +53,18 @@ if ($status == false) {
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <!-- BootstrapのJS読み込み -->
     <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
-    <link rel="stylesheet" href="input.css">
+    <link rel="stylesheet" href="read.css">
     <title>（一覧画面）</title>
 </head>
 
 <body>
     <main>
         <fieldset>
-            <legend> </legend>
-            <legend class="top">
-                <div>管理者画面 </div>
-                <div><a href="input.php">メンバー追加</a>
-                    <a href="index.php">TOP</a></div>
-            </legend>
+            <legend>メンバー紹介</legend>
 
             <table>
                 <thead>
-                    <div class="box"><?= $output ?></div>
+                    <?= $output ?>
                 </thead>
                 <tbody>
                     <!-- ここに<tr><td>deadline</td><td>todo</td><tr>の形でデータが入る -->
@@ -77,7 +74,9 @@ if ($status == false) {
         </fieldset>
     </main>
     <footer>
-
+        <div>
+            <a href="index.php">TOP</a>
+        </div>
     </footer>
 </body>
 

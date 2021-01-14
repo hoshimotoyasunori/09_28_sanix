@@ -42,7 +42,7 @@
             </div>
 
             <ul>
-                <li><a href="read.php">管理者ページ</a></li>
+                <li><a href="member.php">メンバー紹介</a></li>
 
             </ul>
 

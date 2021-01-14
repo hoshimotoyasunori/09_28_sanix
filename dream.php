@@ -3,7 +3,7 @@ include('functions.php');
 $pdo = connect_to_db();
 
 //データ参照SQL作成
-$sql = 'SELECT * FROM rugby_table order by team asc, tall asc';
+$sql = 'SELECT * FROM sanix_member order by main_position asc';
 $stmt = $pdo->prepare($sql);
 $status = $stmt->execute(); //実行を忘れずに
 
@@ -18,9 +18,9 @@ if ($status == false) {
     $output = "";
     foreach ($result as $record) {
         // $output .= "<tr><td>{$record["team"]}</td><td>{$record["name"]}</td><tr>";
-        $output .= "<tr>";
-        $output .= "<td><img src=\"" . $record['image'] . "\"></td>";
-        $output .= "</tr>";
+        // $output .= "<tr>";
+        $output .= "<option value='{$record["image"]}'><img src=\"" . $record['image'] . "\"></option>";
+        // $output .= "</tr>";
         // $output .= "<td><a href='todo_edit.php?id={$record["id"]}'>edit</a></td>";
         // $output .= "<td><a href='todo_delete.php?id={$record["id"]}'>delete</a></td>";
         // $output .= "</tr>";
@@ -29,30 +29,23 @@ if ($status == false) {
 }
 
 
-$sql = 'SELECT * FROM rugby_table order by team asc, tall asc';
-$stmt = $pdo->prepare($sql);
-$status = $stmt->execute(); //実行を忘れずに
+// $sql = 'SELECT * FROM sanix_member order by main_position asc';
+// $stmt = $pdo->prepare($sql);
+// $status = $stmt->execute(); 
 
-if ($status == false) {
-    $error = $stmt->errorInfo(); //失敗時はエラー出力
-    exit('sqlError:' . $error[2]);
-} else {
-    $result = $stmt->fetchAll(PDO::FETCH_ASSOC); //fetchAllで全部取れる
-    // var_dump($result);
-    // exit();
+// if ($status == false) {
+//     $error = $stmt->errorInfo(); 
+//     exit('sqlError:' . $error[2]);
+// } else {
+//     $result = $stmt->fetchAll(PDO::FETCH_ASSOC); 
 
-    $output = "";
-    foreach ($result as $record) {
-        // $output .= "<tr><td>{$record["team"]}</td><td>{$record["name"]}</td><tr>";
-        $output .= "<tr>";
-        $output .= "<td><img src=\"" . $record['image'] . "\"></td>";
-        $output .= "</tr>";
-        // $output .= "<td><a href='todo_edit.php?id={$record["id"]}'>edit</a></td>";
-        // $output .= "<td><a href='todo_delete.php?id={$record["id"]}'>delete</a></td>";
-        // $output .= "</tr>";
-    }
-    unset($record);
-}
+//     $output = "";
+//     foreach ($result as $record) {
+//         $output .= "<option value='{$record["image"]}'></option>";
+
+//     }
+//     unset($record);
+// }
 ?>
 
 
@@ -82,10 +75,11 @@ if ($status == false) {
         <div class="box">
             <div class="FR">
                 <div class="hako">1
+                    <select name="" id="">
+                        <?= $output ?>
+                    </select>
                     <!-- <select name="member" id="">
-                        <option value="$output">
-
-                        </option>
+                        <option value="$output"></option>
                     </select> -->
                 </div>
                 <div class="hako">2</div>

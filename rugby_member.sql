@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- ホスト: localhost
--- 生成日時: 2021 年 1 月 13 日 15:03
+-- 生成日時: 2021 年 1 月 14 日 18:03
 -- サーバのバージョン： 10.4.17-MariaDB
 -- PHP のバージョン: 8.0.0
 
@@ -43,7 +43,29 @@ INSERT INTO `add_account` (`id`, `username`, `mail`, `password`, `is_created`) V
 (1, 'tehon', 'hoshimotoyasunori@yahoo.co.jp', '123456', '2021-01-13 06:02:34'),
 (4, 'tehon', 'hoshimotoyasunori@gmail.com', '123', '2021-01-13 06:02:16'),
 (5, 'tehon', 'benjyamin@yahoo.co.jp', '456', '2021-01-13 11:49:15'),
-(6, 'ben', 'benjyamin@yahoo.co.jp', '789', '2021-01-13 11:55:05');
+(6, 'ben', 'benjyamin@yahoo.co.jp', '789', '2021-01-13 11:55:05'),
+(7, 'hashikawa', 'hashikawa@yahoo.co.jp', 'qwe', '2021-01-14 23:28:10');
+
+-- --------------------------------------------------------
+
+--
+-- テーブルの構造 `kanri_table`
+--
+
+CREATE TABLE `kanri_table` (
+  `id` int(12) NOT NULL,
+  `username` varchar(128) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `mail` varchar(128) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `password` varchar(128) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `is_created` datetime NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- テーブルのデータのダンプ `kanri_table`
+--
+
+INSERT INTO `kanri_table` (`id`, `username`, `mail`, `password`, `is_created`) VALUES
+(1, 'tehon', 'hoshimotoyasunori@yahoo.co.jp', '123', '2021-01-14 23:47:16');
 
 -- --------------------------------------------------------
 
@@ -120,11 +142,20 @@ INSERT INTO `rugby_table` (`id`, `team`, `name`, `tall`, `weight`, `born`, `come
 
 CREATE TABLE `sanix_member` (
   `id` int(12) NOT NULL,
-  `name` int(128) NOT NULL,
+  `name` varchar(128) COLLATE utf8mb4_unicode_ci NOT NULL,
   `main_position` int(12) NOT NULL,
   `sub_position` int(12) NOT NULL,
-  `img` varchar(128) COLLATE utf8mb4_unicode_ci NOT NULL
+  `image` varchar(128) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `updated_at` datetime NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- テーブルのデータのダンプ `sanix_member`
+--
+
+INSERT INTO `sanix_member` (`id`, `name`, `main_position`, `sub_position`, `image`, `updated_at`) VALUES
+(1, '星本泰憲', 2, 7, 'https://www.top-league.jp/wp-content/uploads/2017/01/sanix_fukusaki.jpg', '2021-01-15 00:38:29'),
+(2, '星本泰憲', 2, 7, 'https://www.top-league.jp/wp-content/uploads/2017/01/sanix_fukusaki.jpg', '2021-01-15 00:39:16');
 
 --
 -- ダンプしたテーブルのインデックス
@@ -134,6 +165,12 @@ CREATE TABLE `sanix_member` (
 -- テーブルのインデックス `add_account`
 --
 ALTER TABLE `add_account`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- テーブルのインデックス `kanri_table`
+--
+ALTER TABLE `kanri_table`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -156,7 +193,13 @@ ALTER TABLE `sanix_member`
 -- テーブルの AUTO_INCREMENT `add_account`
 --
 ALTER TABLE `add_account`
-  MODIFY `id` int(12) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` int(12) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+
+--
+-- テーブルの AUTO_INCREMENT `kanri_table`
+--
+ALTER TABLE `kanri_table`
+  MODIFY `id` int(12) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- テーブルの AUTO_INCREMENT `rugby_table`
@@ -168,7 +211,7 @@ ALTER TABLE `rugby_table`
 -- テーブルの AUTO_INCREMENT `sanix_member`
 --
 ALTER TABLE `sanix_member`
-  MODIFY `id` int(12) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(12) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
