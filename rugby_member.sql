@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- ホスト: localhost
--- 生成日時: 2021 年 1 月 14 日 18:03
+-- 生成日時: 2021 年 1 月 15 日 20:03
 -- サーバのバージョン： 10.4.17-MariaDB
 -- PHP のバージョン: 8.0.0
 
@@ -143,8 +143,8 @@ INSERT INTO `rugby_table` (`id`, `team`, `name`, `tall`, `weight`, `born`, `come
 CREATE TABLE `sanix_member` (
   `id` int(12) NOT NULL,
   `name` varchar(128) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `main_position` int(12) NOT NULL,
-  `sub_position` int(12) NOT NULL,
+  `main_position` varchar(128) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `sub_position` varchar(128) COLLATE utf8mb4_unicode_ci NOT NULL,
   `image` varchar(128) COLLATE utf8mb4_unicode_ci NOT NULL,
   `updated_at` datetime NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
@@ -154,8 +154,48 @@ CREATE TABLE `sanix_member` (
 --
 
 INSERT INTO `sanix_member` (`id`, `name`, `main_position`, `sub_position`, `image`, `updated_at`) VALUES
-(1, '星本泰憲', 2, 7, 'https://www.top-league.jp/wp-content/uploads/2017/01/sanix_fukusaki.jpg', '2021-01-15 00:38:29'),
-(2, '星本泰憲', 2, 7, 'https://www.top-league.jp/wp-content/uploads/2017/01/sanix_fukusaki.jpg', '2021-01-15 00:39:16');
+(1, '星本泰憲', 'HO', 'FL', 'https://sports.smt.docomo.ne.jp/rugby/img/topleague/player/295250.jpg', '2021-01-16 00:54:49'),
+(5, '屋宜ベンジャミン', 'WTB', 'FB', 'https://rugby-japan.s3-ap-northeast-1.amazonaws.com/res/img/photo/topleague/sanix/20009.jpg', '2021-01-15 13:23:58'),
+(6, '申 東源', 'PR', '-', 'https://rugby-japan.s3-ap-northeast-1.amazonaws.com/res/img/photo/topleague/sanix/42251.jpg', '2021-01-16 00:53:29'),
+(7, 'パディー・ライアン', 'PR', '-', 'https://pbs.twimg.com/media/Ee7kp5GU0AAtCJ3.jpg', '2021-01-15 22:55:51'),
+(8, '佐々木 駿', 'PR', '-', 'https://sports.smt.docomo.ne.jp/rugby/img/topleague/player/322855.jpg', '2021-01-15 22:56:49'),
+(9, '髙野 恭二', 'FB', 'WTB', 'https://sports.smt.docomo.ne.jp/rugby/img/topleague/player/301844_s.jpg', '2021-01-15 22:58:33'),
+(10, 'レメキ ロマノ ラヴァ', 'WTB', 'FB', 'https://pbs.twimg.com/profile_images/1278768568843202560/rv7HJAJ9_400x400.jpg', '2021-01-15 23:00:32'),
+(11, '山田 大生', 'CTB', 'WTB', 'https://pbs.twimg.com/profile_images/1263480111392649216/vkwWNuvh_400x400.jpg', '2021-01-15 23:01:43'),
+(12, 'カーン・ヘスケス', 'WTB', 'CTB', 'https://rugby-japan.s3-ap-northeast-1.amazonaws.com/res/img/photo/topleague/sanix/69352.jpg', '2021-01-16 00:37:11'),
+(13, '田代 宙士', 'SO', '-', 'https://sports.smt.docomo.ne.jp/rugby/img/topleague/player/295247.jpg', '2021-01-16 00:38:27'),
+(14, '小野 晃征', 'SO', 'CTB', 'https://sports.smt.docomo.ne.jp/rugby/img/topleague/player/325545.jpg', '2021-01-16 00:39:17'),
+(15, '香川 凜人', 'SO', 'CTB', 'https://sports.smt.docomo.ne.jp/rugby/img/topleague/player/322878.jpg', '2021-01-16 00:40:07'),
+(16, '濱里 耕平', 'SH', 'WTB', 'https://sports.smt.docomo.ne.jp/rugby/img/topleague/player/322816.jpg', '2021-01-16 00:41:09'),
+(18, '藤井 達哉', 'SH', '-', 'https://www.top-league.jp/wp-content/uploads/2020/01/fujii_sanix_e.jpg', '2021-01-16 00:42:24'),
+(19, '今村 雄太', 'CTB', '-', 'https://sports.smt.docomo.ne.jp/rugby/img/topleague/player/322879.jpg', '2021-01-16 00:43:23'),
+(20, 'ティム・ベネット', 'CTB', '-', 'https://sports.smt.docomo.ne.jp/rugby/img/topleague/player/301845.jpg', '2021-01-16 00:44:29'),
+(21, '王 授榮', 'CTB', 'CTB', 'https://sports.smt.docomo.ne.jp/rugby/img/topleague/player/322840.jpg', '2021-01-16 00:45:04'),
+(22, 'ジェイソン・エメリー', 'FB', 'CTB', 'https://sports.smt.docomo.ne.jp/rugby/img/topleague/player/322856.jpg', '2021-01-16 00:45:47'),
+(23, '森林 啓斗', 'CTB', 'CTB', 'https://userdisk.webry.biglobe.ne.jp/008/238/39/N000/000/032/152470873453062941177_DSC_1023.jpg', '2021-01-16 00:47:25'),
+(24, 'トニシオ・バイフ', 'CTB', '-', 'https://userdisk.webry.biglobe.ne.jp/008/238/39/N000/000/000/160445901385299529343.jpg', '2021-01-16 00:48:15'),
+(25, '盛田 気', 'FB', 'WTB', 'https://sports.smt.docomo.ne.jp/rugby/img/topleague/player/322857.jpg', '2021-01-16 00:48:53'),
+(26, '木下 皓太', 'SH', '-', 'https://sports.smt.docomo.ne.jp/rugby/img/topleague/player/322874.jpg', '2021-01-16 00:50:23'),
+(27, 'ラーボニ・ウォーレン・ボスアヤコ', 'NO.8', '-', 'https://sunwolves.or.jp/files/tinymce/IMG_9850.JPG', '2021-01-16 01:00:15'),
+(28, '金堂 礼', 'NO.8', '-', 'https://sports.smt.docomo.ne.jp/rugby/img/topleague/player/295266.jpg', '2021-01-16 01:00:48'),
+(29, 'サム・チョンキット', 'FL', 'NO.8', 'https://sports.smt.docomo.ne.jp/rugby/img/topleague/player/322858.jpg', '2021-01-16 01:03:49'),
+(30, 'タタナ ダラス', 'LO', 'FL', 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR_9r4HzC-dNJHWXGxUvf0E3QrmqsyiAIPyTQ&usqp=CAU', '2021-01-16 01:05:49'),
+(31, '鶴岡 怜志', 'FL', 'NO.8', 'https://rugby.sanix.jp/iimages/news/ac4f29722973b4eb83ca9a2fa42c6995.jpg', '2021-01-16 01:06:24'),
+(32, 'ダン・プライアー', 'FL', 'NO.8', 'https://pbs.twimg.com/media/D2toFdSUkAArUSk.jpg', '2021-01-16 01:07:00'),
+(33, '寺田 桂太', 'LO', '-', 'https://sports.smt.docomo.ne.jp/rugby/img/topleague/player/325533.jpg', '2021-01-16 01:07:31'),
+(34, '廣田 耀規', 'LO', '-', 'https://sports.smt.docomo.ne.jp/rugby/img/topleague/player/322853.jpg', '2021-01-16 01:08:06'),
+(35, 'ジェームス・ムーア', 'LO', 'FL', 'https://sports.smt.docomo.ne.jp/rugby/img/topleague/player/322859.jpg', '2021-01-16 01:08:36'),
+(36, '西井 利宏', 'LO', 'FL', 'https://sports.smt.docomo.ne.jp/rugby/img/topleague/player/322835.jpg', '2021-01-16 01:09:09'),
+(37, 'マーク・アボット', 'LO', '-', 'https://sunwolves.or.jp/files/player/2019/118.jpg', '2021-01-16 01:10:16'),
+(38, '福坪 龍一郎', 'LO', '-', 'https://sports.smt.docomo.ne.jp/rugby/img/topleague/player/322836.jpg', '2021-01-16 01:10:50'),
+(39, '宮﨑 達也', 'HO', '-', 'https://sports.smt.docomo.ne.jp/rugby/img/topleague/player/322889.jpg', '2021-01-16 01:11:20'),
+(40, '倉屋 望', 'HO', '-', 'https://sports.smt.docomo.ne.jp/rugby/img/topleague/player/322847.jpg', '2021-01-16 01:11:48'),
+(41, '王 鏡聞', 'HO', 'PR', 'https://sports.smt.docomo.ne.jp/rugby/img/topleague/player/322869.jpg', '2021-01-16 01:12:20'),
+(42, '隈本 浩太', 'HO', 'PR', 'https://sports.smt.docomo.ne.jp/rugby/img/topleague/player/295249.jpg', '2021-01-16 01:12:49'),
+(43, 'ジャレッド・アダムス', 'PR', '-', 'https://sports.smt.docomo.ne.jp/rugby/img/topleague/player/325601.jpg', '2021-01-16 01:13:17'),
+(44, '寺脇 駿', 'PR', '-', 'https://userdisk.webry.biglobe.ne.jp/008/238/39/N000/000/000/159781353582126851602.jpeg', '2021-01-16 01:24:44'),
+(45, '村上 翔梧', 'PR', '-', 'https://pbs.twimg.com/media/EeSYmZ5U0AMryZo.jpg', '2021-01-16 01:14:43'),
+(46, '加藤 一希', 'PR', 'LO', 'https://sports.smt.docomo.ne.jp/rugby/img/topleague/player/295269.jpg', '2021-01-16 01:15:14');
 
 --
 -- ダンプしたテーブルのインデックス
@@ -211,7 +251,7 @@ ALTER TABLE `rugby_table`
 -- テーブルの AUTO_INCREMENT `sanix_member`
 --
 ALTER TABLE `sanix_member`
-  MODIFY `id` int(12) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(12) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=47;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
