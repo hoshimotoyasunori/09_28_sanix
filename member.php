@@ -12,7 +12,7 @@ $pdo = connect_to_db();
 // var_dump($_POST);
 // exit();
 // データ取得SQL作成
-$sql = 'SELECT * FROM sanix_member order by main_position desc';
+$sql = 'SELECT * FROM sanix_member order by id desc';
 
 // SQL準備&実行
 $stmt = $pdo->prepare($sql);
@@ -33,7 +33,7 @@ if ($status == false) {
     // <tr><td>deadline</td><td>todo</td><tr>の形になるようにforeachで順番に$outputへデータを追加
     // `.=`は後ろに文字列を追加する，の意味
     foreach ($result as $record) {
-        $output .= "<td><button><img src=\"" . $record['image'] . "\"></button></td>";
+        $output .= "<img src=\"" . $record['image'] . "\">";
     }
     // $valueの参照を解除する．解除しないと，再度foreachした場合に最初からループしない
     // 今回は以降foreachしないので影響なし
@@ -53,30 +53,30 @@ if ($status == false) {
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <!-- BootstrapのJS読み込み -->
     <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
-    <link rel="stylesheet" href="read.css">
+    <link rel="stylesheet" href="member.css">
     <title>（一覧画面）</title>
 </head>
 
 <body>
     <main>
         <fieldset>
-            <legend>メンバー紹介</legend>
-
-            <table>
-                <thead>
+            <legend></legend>
+            <legend class="head">
+                <div>メンバー紹介</div>
+                <div><a href="index.php">TOP</a></div>
+            </legend>
+            <div class="main">
+                <div>
                     <?= $output ?>
-                </thead>
-                <tbody>
-                    <!-- ここに<tr><td>deadline</td><td>todo</td><tr>の形でデータが入る -->
+                </div>
+            </div>
 
-                </tbody>
-            </table>
+            <!-- ここに<tr><td>deadline</td><td>todo</td><tr>の形でデータが入る -->
+
         </fieldset>
     </main>
     <footer>
-        <div>
-            <a href="index.php">TOP</a>
-        </div>
+
     </footer>
 </body>
 

@@ -47,6 +47,7 @@ if ($status == false) {
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <!-- BootstrapのJS読み込み -->
     <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="input.css">
 
     <title>（編集画面）</title>
 </head>
@@ -60,21 +61,46 @@ if ($status == false) {
             <div>
                 <?= $record["name"] ?>
             </div>
-            <div>
-                <input type="text" name="main_position" value="<?= $record["main_position"] ?>">
+            <div class="inside">
+                POSITION:<select name="main_position">
+                    <option value="PR">PR</option>
+                    <option value="HO">HO</option>
+                    <option value="LO">LO</option>
+                    <option value="FL">FL</option>
+                    <option value="NO.8">NO.8</option>
+                    <option value="SH">SH</option>
+                    <option value="SO">SO</option>
+                    <option value="CTB">CTB</option>
+                    <option value="WTB">WTB</option>
+                    <option value="FB">FB</option>
+                </select>
+            </div>
+            <div class="inside">
+                Sub:<select name="sub_position">
+                    <option value="PR">PR</option>
+                    <option value="HO">HO</option>
+                    <option value="LO">LO</option>
+                    <option value="FL">FL</option>
+                    <option value="NO.8">NO.8</option>
+                    <option value="SH">SH</option>
+                    <option value="SO">SO</option>
+                    <option value="CTB">CTB</option>
+                    <option value="WTB">WTB</option>
+                    <option value="FB">FB</option>
+                    <option value="-">-</option>
+                </select>
             </div>
             <div>
-                <input type="text" name="sub_position" value="<?= $record["sub_position"] ?>">
-            </div>
-            <div>
-                <input type="url" name="image" value="<?= $record["image"] ?>">
+                画像:<input type="url" class="gazou" name="image" value="<?= $record["image"] ?>">
             </div>
             <div>
                 <button>更新</button>
             </div>
             <input type="hidden" name="id" value="<?= $record["id"] ?>">
         </fieldset>
-        <?= "<img src=\"" . $record['image'] . "\">"  ?>
+        <div class="rei">
+            <?= "<img src=\"" . $record['image'] . "\">"  ?>
+        </div>
     </form>
 
 </body>

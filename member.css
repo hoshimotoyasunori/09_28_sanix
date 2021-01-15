@@ -1,0 +1,31 @@
+html{
+    display: flex;
+    justify-content: space-around;
+    align-items: center; 
+    flex-direction: column;
+}
+body{
+    background-color: black;
+}
+img{
+    width: 10vw;
+    height: 10vw;
+}
+.head{
+    display: flex;
+    justify-content: space-around;
+    align-items: center; 
+    /* flex-direction: column; */
+}
+.main{
+    display: flex;
+    justify-content: space-around;
+    align-items: center; 
+    flex-direction: column;
+}
+main{
+    width: 90vw;
+}
+div{
+    color: white;
+}

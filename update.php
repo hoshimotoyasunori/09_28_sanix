@@ -4,12 +4,9 @@
 // 送信データのチェック
 // 送信データ受け取り
 $id = $_POST['id'];
-$team = $_POST['team'];
-$name = $_POST['name'];
-$tall = $_POST['tall'];
-$weight = $_POST['weight'];
-$born = $_POST['born'];
-$comefrom = $_POST['comefrom'];
+// $name = $_POST['name'];
+$main_position = $_POST['main_position'];
+$sub_position = $_POST['sub_position'];
 $image = $_POST['image'];
 
 // 関数ファイルの読み込み
@@ -21,20 +18,17 @@ check_session_id();
 $pdo = connect_to_db();
 
 // UPDATE文を作成&実行
-$sql = 'UPDATE rugby_table SET team=:team, name=:name, tall=:tall, weight=:weight, born=:born, comefrom=:comefrom, image=:image, updated_at=sysdate()  WHERE id =:id';
+$sql = 'UPDATE sanix_member SET main_position=:main_position, sub_position=:sub_position, image=:image, updated_at=sysdate()  WHERE id =:id';
 
 $stmt = $pdo->prepare($sql);
-$stmt->bindValue(':team', $team, PDO::PARAM_STR);
-$stmt->bindValue(':name', $name, PDO::PARAM_STR);
-$stmt->bindValue(':tall', $tall, PDO::PARAM_INT);
-$stmt->bindValue(':weight', $weight, PDO::PARAM_INT);
-$stmt->bindValue(':born', $born, PDO::PARAM_STR);
-$stmt->bindValue(':comefrom', $comefrom, PDO::PARAM_STR);
+// $stmt->bindValue(':name', $name, PDO::PARAM_STR);
+$stmt->bindValue(':main_position', $main_position, PDO::PARAM_STR);
+$stmt->bindValue(':sub_position', $sub_position, PDO::PARAM_STR);
 $stmt->bindValue(':image', $image, PDO::PARAM_STR);
 $stmt->bindValue(':id', $id, PDO::PARAM_INT);
+$status = $stmt->execute();
 // var_dump($_POST);
 // exit();
-$status = $stmt->execute();
 
 // データ登録処理後
 if ($status == false) {

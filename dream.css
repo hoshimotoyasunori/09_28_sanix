@@ -1,11 +1,23 @@
+
+html{
+    width: 100vw;
+    height: 100vh;
+    /* background-color: black; */
+}
+
 body{
+    width: 100vw;
+    /* height: 100vh; */
     display: flex;
     justify-content: space-around;
     align-items: center;
     flex-direction: column;
     padding: 0%;
     margin: 0%;
-    background-color: black;
+    background-image: url(image/rug009.jpg);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
 }
 header{
     display: flex;
@@ -13,96 +25,44 @@ header{
     /* align-items: center; */
     /* flex-direction: column; */
     width: 90vw;
-    height: 40vh;
+    height: auto;
     /* overflow: scroll; */
-    background-color: white;
-}
-.output{
-    /* display: flex;
-    justify-content: space-around; */
-    /* align-items: center; */
-    /* flex-direction: column; */
-    width: 50%;
-    height: 40vh;
-    overflow: scroll;
-    background-color: white;
-}
-.link{
-    width: 50%;
-    border: solid 1px;
-}
-main{
-    width: 90vw;
-    background-color: black;
-}
-.top{
-    background-color: black;
-    color: white;
-}
-.box{
-    width: 90vw;
-    height: 60vh;
-    display: flex;
-    justify-content: space-around;
-    align-items: stretch;
-    /* flex-direction: column; */
-}
-img{
-    width: 10vw;
-    height: 10vw;
-}
-.FR{
-    width: calc(100vw/8);
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    flex-direction: column;    
-}
-.SR{
-    width: calc(100vw/8);
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    flex-direction: column;
-}
-.BR{
-    width: calc(100vw/8);
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    flex-direction: column;
-}
-.SH{
-    width: calc(100vw/8);
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    flex-direction: column;
-}
-.SO{
-    width: calc(100vw/8);
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    flex-direction: column;
-}
-.TB{width: calc(100vw/8);
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    flex-direction: column;
+    /* background-color: black; */
 }
 
-.FB{
-    width: calc(100vw/8);
+
+main{
+    width: 90vw;
+    /* background-color: black; */
     display: flex;
     justify-content: space-around;
     align-items: center;
-    flex-direction: column;
+    /* flex-direction: column; */
 }
-.hako{
-    width: calc(100vw/8);
-    height:calc(100vw/8);
-    border: solid 1px;
-    background-color: white;
+
+img{
+    width: calc(90vw/15);
+    height: calc(90vw/15);
+    border-radius: 20%;
+}
+.out{
+    border-radius: 20%;
+}
+.open{
+    width: calc(90vw/15);
+    height: calc(90vw/15);
+}
+button{
+    padding: 0%;
+    margin: 0%;
+    border: none;
+}
+
+p{
+    font-size: 50%;
+}
+img:hover{
+    border: none;
+    transform: scale(2,2);
+    transition-duration: 0.3s;
 }

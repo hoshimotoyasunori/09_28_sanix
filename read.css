@@ -1,0 +1,51 @@
+html{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+body{
+    width: 60VW;
+}
+.top{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /* flex-direction: column; */
+}
+.box{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.stile{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+input{
+    width: 100%;
+}
+fieldset{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.inside{
+    width: 60%;
+}
+img{
+    width: 10vw;
+    height: 10vw;
+}
+select{
+    width: 100%;
+}
+.rei{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}

@@ -33,8 +33,8 @@ $sql = 'INSERT INTO sanix_member(id, name, main_position, sub_position, image, u
 // SQL準備&実行
 $stmt = $pdo->prepare($sql);
 $stmt->bindValue(':name', $name, PDO::PARAM_STR);
-$stmt->bindValue(':main_position', $main_position, PDO::PARAM_INT);
-$stmt->bindValue(':sub_position', $sub_position, PDO::PARAM_INT);
+$stmt->bindValue(':main_position', $main_position, PDO::PARAM_STR);
+$stmt->bindValue(':sub_position', $sub_position, PDO::PARAM_STR);
 $stmt->bindValue(':image', $image, PDO::PARAM_STR);
 
 $status = $stmt->execute();
