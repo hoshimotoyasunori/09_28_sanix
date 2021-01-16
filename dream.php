@@ -68,7 +68,7 @@ if ($status == false) {
 
     $output1 = "";
     foreach ($result as $record) {
-        $output1 .= "<img src=\"" . $record['image'] . "\">";
+        $output1 .= "<img src=\"" . $record['image'] . "\"><option>{$record["name"]}</option>";
     }
     unset($record);
 }
@@ -258,24 +258,27 @@ if ($status == false) {
 </head>
 
 <body>
-    <header>
+    <!-- <header>
         <a href="index.php">top画面</a>
-    </header>
-    <main>
+    </header> -->
+    <main class="list">
         <div>
             <button class="open" id="button1">
                 <div id="moji">
-                    <p>①-PR</p>
+                    <p>①</p>
                 </div>
                 <div class="out" id="PR1" style="display: none;">
-                    <?= $output1 ?>
+                    <select name="" id="">
+                        <?= $output1 ?>
+
+                    </select>
                 </div>
             </button>
         </div>
         <div>
             <button class="open" id="button2">
                 <div id="moji">
-                    <p>②-HO</p>
+                    <p>②</p>
                 </div>
                 <div class="out" id="HO" style="display: none;">
                     <?= $output2 ?>
@@ -285,7 +288,7 @@ if ($status == false) {
         <div>
             <button class="open" id="button3">
                 <div id="moji">
-                    <p>③-PR</p>
+                    <p>③</p>
                 </div>
                 <div class="out" id="PR3" style="display: none;">
                     <?= $output1 ?>
@@ -295,7 +298,7 @@ if ($status == false) {
         <div>
             <button class="open" id="button4">
                 <div id="moji">
-                    <p>④-LO</p>
+                    <p>④</p>
                 </div>
                 <div class="out" id="LO4" style="display: none;">
                     <?= $output3 ?>
@@ -305,7 +308,7 @@ if ($status == false) {
         <div>
             <button class="open" id="button5">
                 <div id="moji">
-                    <p>⑤-LO</p>
+                    <p>⑤</p>
                 </div>
                 <div class="out" id="LO5" style="display: none;">
                     <?= $output3 ?>
@@ -315,7 +318,7 @@ if ($status == false) {
         <div>
             <button class="open" id="button6">
                 <div id="moji">
-                    <p>⑥-FL</p>
+                    <p>⑥</p>
                 </div>
                 <div class="out" id="FL6" style="display: none;">
                     <?= $output4 ?>
@@ -325,7 +328,7 @@ if ($status == false) {
         <div>
             <button class="open" id="button7">
                 <div id="moji">
-                    <p>⑦-FL</p>
+                    <p>⑦</p>
                 </div>
                 <div class="out" id="FL7" style="display: none;">
                     <?= $output4 ?>
@@ -335,7 +338,7 @@ if ($status == false) {
         <div>
             <button class="open" id="button8">
                 <div id="moji">
-                    <p>⑧-NO8</p>
+                    <p>⑧</p>
                 </div>
                 <div class="out" id="NO8" style="display: none;">
                     <?= $output5 ?>
@@ -345,7 +348,7 @@ if ($status == false) {
         <div>
             <button class="open" id="button9">
                 <div id="moji">
-                    <p>9-SH</p>
+                    <p>9</p>
                 </div>
                 <div class="out" id="SH" style="display: none;">
                     <?= $output6 ?>
@@ -355,7 +358,7 @@ if ($status == false) {
         <div>
             <button class="open" id="button10">
                 <div id="moji">
-                    <p>10-SO</p>
+                    <p>10</p>
                 </div>
                 <div class="out" id="SO" style="display: none;">
                     <?= $output7 ?>
@@ -365,7 +368,7 @@ if ($status == false) {
         <div>
             <button class="open" id="button11">
                 <div id="moji">
-                    <p>11-WTB</p>
+                    <p>11</p>
                 </div>
                 <div class="out" id="WTB11" style="display: none;">
                     <?= $output9 ?>
@@ -375,7 +378,7 @@ if ($status == false) {
         <div>
             <button class="open" id="button12">
                 <div id="moji">
-                    <p>12-CTB</p>
+                    <p>12</p>
                 </div>
                 <div class="out" id="CTB12" style="display: none;">
                     <?= $output8 ?>
@@ -385,7 +388,7 @@ if ($status == false) {
         <div>
             <button class="open" id="button13">
                 <div id="moji">
-                    <p>13-CTB</p>
+                    <p>13</p>
                 </div>
                 <div class="out" id="CTB13" style="display: none;">
                     <?= $output8 ?>
@@ -395,7 +398,7 @@ if ($status == false) {
         <div>
             <button class="open" id="button14">
                 <div id="moji">
-                    <p>14-WTB</p>
+                    <p>14</p>
                 </div>
                 <div class="out" id="WTB14" style="display: none;">
                     <?= $output9 ?>
@@ -405,20 +408,21 @@ if ($status == false) {
         <div>
             <button class="open" id="button15">
                 <div id="moji">
-                    <p>15-FB</p>
+                    <p>15</p>
                 </div>
                 <div class="out" id="FB" style="display: none;">
                     <?= $output10 ?>
                 </div>
             </button>
         </div>
-
-
+    </main>
+    <main class="back_image">
+        <div class="free"></div>
     </main>
     <script>
         $(function() {
             $("#button1").click(function() {
-                $("#PR1").toggle();
+                $("#PR1").show();
             });
         });
         $(function() {

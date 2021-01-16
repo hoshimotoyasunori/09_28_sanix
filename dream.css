@@ -3,6 +3,8 @@ html{
     width: 100vw;
     height: 100vh;
     /* background-color: black; */
+    
+    background-color: chartreuse;
 }
 
 body{
@@ -14,10 +16,10 @@ body{
     flex-direction: column;
     padding: 0%;
     margin: 0%;
-    background-image: url(image/rug009.jpg);
+    /* background-image: url(image/rug009.jpg);
     background-repeat: no-repeat;
     background-size: contain;
-    background-position: center;
+    background-position: center; */
 }
 header{
     display: flex;
@@ -32,12 +34,30 @@ header{
 
 
 main{
-    width: 90vw;
+    width: 100%;
     /* background-color: black; */
     display: flex;
     justify-content: space-around;
     align-items: center;
     /* flex-direction: column; */
+    background-color: chartreuse;
+}
+.list{
+    z-index: 100;
+}
+.back_image{
+    z-index: 10;
+}
+.back_image{
+    
+    background-image: url(image/rug009.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+.free{
+    width: calc(90vw/15);
+    height: calc(90vh);
 }
 
 img{
@@ -47,10 +67,15 @@ img{
 }
 .out{
     border-radius: 20%;
+
+    background-color: dodgerblue;
+
 }
 .open{
     width: calc(90vw/15);
     height: calc(90vw/15);
+
+    background-color: dodgerblue;
 }
 button{
     padding: 0%;
@@ -59,7 +84,7 @@ button{
 }
 
 p{
-    font-size: 50%;
+    font-size: 100%;
 }
 img:hover{
     border: none;

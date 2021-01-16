@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>idea-tool</title>
+</head>
+
+
+<FRAMESET rows="95%,*">　（FRAMESETの始まり、左右に分割）
+    <FRAME SRC="index.php">（page1の表示）
+        <FRAME SRC="music.html">　（page2の表示）
+            <NOFRAME>　（NOFRAMESの始まり）
+
+                <BODY>
+                    <A HREF="index.php">page1</A><BR>
+                    <A HREF="music.html">page2</A><BR>
+                </BODY>
+            </NOFRAME>　（NOFRAMESの終わり）
+</FRAMESET>　（FRAMESETの終わり）
+
+</html>
